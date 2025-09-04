@@ -47,3 +47,65 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
 
 .site-footer{border-top:1px solid var(--border);padding:18px 0;margin-top:24px;color:#555}
 .visually-hidden{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+/* === LEAF THEME OVERRIDES (append at end) =============================== */
+/* Brand tokens in HSL "parts" + mapping to app variables */
+:root{
+  /* Primary LEAF palette (from PDF) */
+  --leaf-red: 356 73% 33%;        /* #A31D21 */
+  --leaf-dark-green: 134 36% 16%; /* #204325 */
+  --leaf-light-green: 180 56% 58%;/* #6ABBBE */
+  --leaf-teal: 207 82% 39%;       /* #0E68BC */
+  --leaf-blue: 186 62% 59%;       /* #55C4D7 */
+  --leaf-yellow: 48 100% 50%;     /* #FFCC00 */
+  --leaf-cream: 52 83% 90%;       /* #FAF0CD */
+  /* Book campaign (spares if needed later) */
+  --leaf-deep-teal: 180 100% 15%;
+  --leaf-forest-green: 140 60% 15%;
+  --leaf-burnt-orange: 25 85% 50%;
+  --leaf-soft-yellow: 48 95% 70%;
+
+  /* Map to the app's theme variables */
+  --bg: hsl(var(--leaf-cream));      /* page background */
+  --text: #1a1a1a;
+  --brand: hsl(var(--leaf-red));     /* primary accents */
+  --accent: hsl(var(--leaf-yellow)); /* focus/highlights */
+  --muted: hsl(52 40% 94%);          /* soft section bg */
+  --card: #ffffff;
+  --border: #e8e8e8;
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(0,0,0,.08);
+
+  --font-headings: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Subtle brand tint on header divider */
+.site-header{ border-bottom-color: color-mix(in hsl, var(--brand) 20%, #fff); }
+
+/* Headings: uppercase, bold, tracked, in dark green */
+.site-title, .day-title{
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-weight: 800;
+  color: hsl(var(--leaf-dark-green));
+  font-family: var(--font-headings);
+}
+
+/* Tabs: brand active/hover */
+.tabs .tab.is-active{ background: var(--brand); border-color: var(--brand); color: #fff; }
+.tabs .tab:hover{ border-color: var(--brand); }
+
+/* Inputs: accessible focus */
+.select:focus, .search:focus{ outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Badges: tinted to brand families */
+.badge--performance{
+  border-color: transparent;
+  background: color-mix(in hsl, var(--leaf-red) 20%, #fff);
+}
+.badge--activity{
+  border-color: transparent;
+  background: color-mix(in hsl, var(--leaf-light-green) 25%, #fff);
+}
+/* ======================================================================= */
+
