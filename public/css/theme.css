@@ -108,4 +108,33 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:
   background: color-mix(in hsl, var(--leaf-light-green) 25%, #fff);
 }
 /* ======================================================================= */
+/* --- Small LEAF polish --- */
+
+/* Tabs look crisper in all-caps, matching headings */
+.tabs .tab{ text-transform: uppercase; letter-spacing:.03em; font-weight:600; }
+
+/* Day heading size + a warm date pill */
+.day-title{ font-size:1.35rem; }
+.day-title .pill{
+  background: color-mix(in hsl, var(--leaf-yellow) 30%, #fff);
+  color:#5a4a00;
+}
+
+/* Cards: a touch more breathing room & soft hover on desktop */
+.card{ padding:16px; transition: box-shadow .2s ease, transform .2s ease; }
+@media (min-width:980px){
+  .card:hover{ box-shadow:0 8px 22px rgba(0,0,0,.12); transform: translateY(-1px); }
+}
+
+/* Meta line: stage as a subtle chip; time a bit bolder */
+.meta .time{ font-weight:700; }
+.meta .stage{
+  font-weight:600;
+  background: color-mix(in hsl, var(--leaf-dark-green) 8%, #fff);
+  padding:2px 8px; border-radius:999px;
+  color: hsl(var(--leaf-dark-green));
+}
+
+/* Optional: a tad wider layout if you want 3 cards to breathe */
+.container{ max-width:1200px; }
 
